@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @author jkeiper
  */
-@Controller
+@Controller("amrsCustomizationSettings")
 @RequestMapping("module/amrscustomization/settings.htm")
 public class SettingsController {
 
