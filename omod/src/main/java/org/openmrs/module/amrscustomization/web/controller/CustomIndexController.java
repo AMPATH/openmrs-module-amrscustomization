@@ -5,8 +5,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
-@RequestMapping("index.htm")
+//@Controller
+//@RequestMapping("index.htm")
 public class CustomIndexController {
 
 	/**
@@ -15,7 +15,7 @@ public class CustomIndexController {
 	 * @param modelMap
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+//	@RequestMapping(method = RequestMethod.GET)
 	public String getCustomIndex(ModelMap modelMap) {
 		return "module/amrscustomization/customIndex";
 	}
