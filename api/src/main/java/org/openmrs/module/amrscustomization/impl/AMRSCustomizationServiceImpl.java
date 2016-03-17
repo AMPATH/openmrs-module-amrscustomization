@@ -73,16 +73,16 @@ public class AMRSCustomizationServiceImpl implements AMRSCustomizationService {
         return dao.getMRNGeneratorLogEntries();
     }
 
-    private void saveMaxUploadSize(Integer maxUploadSize) {
+    private void saveMaxUploadSize(Long maxUploadSize) {
         GlobalProperty gp = Context.getAdministrationService().getGlobalPropertyObject(AMRSCustomizationConstants.GP_MAX_UPLOAD_SIZE);
-        gp.setPropertyValue(Integer.toString(maxUploadSize));
+        gp.setPropertyValue(Long.toString(maxUploadSize));
         Context.getAdministrationService().saveGlobalProperty(gp);
     }
 
     /**
      *  set the maximum upload size, for Remote Form Entry and Clinical Summary Modules
      */
-    public void setMaxUploadSize(Integer maxUploadSize) {
+    public void setMaxUploadSize(Long maxUploadSize) {
         List<CommonsMultipartResolver> resolvers =
                 ServiceContext.getInstance().getRegisteredComponents(CommonsMultipartResolver.class);
         for (CommonsMultipartResolver resolver : resolvers) {
@@ -93,9 +93,9 @@ public class AMRSCustomizationServiceImpl implements AMRSCustomizationService {
 
     public void reloadMaxUploadSize() {
         String maxSizeString = Context.getAdministrationService().getGlobalProperty(AMRSCustomizationConstants.GP_MAX_UPLOAD_SIZE);
-        Integer maxSize;
+        Long maxSize;
         try {
-            maxSize = Integer.parseInt(maxSizeString);
+            maxSize = Long.parseLong(maxSizeString);
         } catch (NumberFormatException e) {
             log.error("could not interpret \""
                     + maxSizeString

@@ -26,7 +26,7 @@ public class SettingsController {
 	}
 
         @RequestMapping(method = RequestMethod.POST)
-        public void updateSetting(@RequestParam Integer maxUploadSize) {
+        public void updateSetting(@RequestParam Long maxUploadSize) {
                 Context.getService(AMRSCustomizationService.class).setMaxUploadSize(maxUploadSize);
         }
         

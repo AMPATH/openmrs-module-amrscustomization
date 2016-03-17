@@ -48,7 +48,7 @@ public interface AMRSCustomizationService {
     @Authorized({PrivilegeConstants.EDIT_PATIENTS})
     public List<MRNGeneratorLogEntry> getMRNGeneratorLogEntries();
 
-    public void setMaxUploadSize(Integer maxUploadSize);
+    public void setMaxUploadSize(Long maxUploadSize);
 
     public void reloadMaxUploadSize();
 
